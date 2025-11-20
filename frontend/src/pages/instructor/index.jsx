@@ -22,11 +22,9 @@ const InstructorDashboardPage = () => {
 
   useEffect(() => {
     const fetchAllCourses = async () => {
-      console.log(instructorId);
-      
+            
       const response = await fetchInstructorCourseListService(instructorId);
-      console.log(response);
-
+      
       if (response?.success) {
         setInstructorCoursesList(response.courseList);
       }
@@ -61,7 +59,6 @@ const InstructorDashboardPage = () => {
     sessionStorage.clear();
   };
 
-  console.log("instructor courses list", instructorCoursesList);
 
   return (
     <div className="flex h-full min-h-screen bg-gray-100">

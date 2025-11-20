@@ -40,15 +40,13 @@ export default function AuthProvider({ children }) {
 
     try {
       const data = await loginService(signInFormData);
-      console.log("login", data);
+      console.log("login Successful");
 
       if (data.success) {
-        console.log("step 1", data.accessToken);
-
+        
         sessionStorage.setItem("accessToken", JSON.stringify(data.accessToken));
 
-        console.log("step 2");
-
+        
         setAuth({
           authenticated: true,
           user: data.user,
@@ -113,7 +111,6 @@ export default function AuthProvider({ children }) {
     });
   };
 
-  console.log("Auth user", auth);
 
   return (
     <AuthContext.Provider

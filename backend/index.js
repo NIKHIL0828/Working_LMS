@@ -34,12 +34,11 @@ app.use("/student/courses-bought", studentCoursesRoutes);
 app.use("/student/course-progress", studentCourseProgressRoutes);
 
 app.use((err, req, res, next) => {
-  console.log(err.stack);
-  res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong" });
 });
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT,"0.0.0.0", () => {
     console.log(`Server is running at port ${PORT}`);
   });
 });
