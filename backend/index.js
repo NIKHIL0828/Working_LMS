@@ -33,6 +33,10 @@ app.use("/student/order", studentViewOrderRoutes);
 app.use("/student/courses-bought", studentCoursesRoutes);
 app.use("/student/course-progress", studentCourseProgressRoutes);
 
+app.use("/health", (req, res) => {
+  res.status(200).json({ message: "Server is healthy" });
+});
+
 app.use((err, req, res, next) => {
     res.status(500).json({ message: "Something went wrong" });
 });
