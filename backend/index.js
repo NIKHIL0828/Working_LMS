@@ -16,13 +16,17 @@ const PORT = process.env.PORT || 5000;
 const corsOptions = {
   origin: [
     "https://working-lms.vercel.app",
-    "http://localhost:5173",
+    "http://localhost:5173"
   ],
-  methods: ["GET", "POST", "DELETE", "PUT"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
+
 app.use(express.json());
 
 app.use("/auth", authRoutes);
