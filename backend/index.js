@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
   origin: [
-    "https://learning-management-system-lms-gray.vercel.app",
+    "https://working-lms.vercel.app",
     "http://localhost:5173",
   ],
   methods: ["GET", "POST", "DELETE", "PUT"],
