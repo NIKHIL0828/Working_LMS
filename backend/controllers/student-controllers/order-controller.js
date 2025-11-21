@@ -23,10 +23,10 @@ const createOrder = async (req, res) => {
       coursePricing,
     } = req.body;
 
-    const baseUrl =
-      process.env.NODE_ENV === "production"
-        ? "https://working-lms.vercel.app"
-        : "http://localhost:5173";
+    const baseUrl = "https://working-lms.vercel.app" || "http://localhost:5173"
+      // process.env.NODE_ENV === "production"
+      //   ? "https://working-lms.vercel.app"
+      //   : "http://localhost:5173";
 
     const create_payment_json = {
       intent: "sale",
